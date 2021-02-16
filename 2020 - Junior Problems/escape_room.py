@@ -1,88 +1,88 @@
-class EscapeRoom:
-    class ER_Node:
-        class PathList:
-            def __init__(self):
-                self.paths = [None]*2
-                self.numItems = 0
-                self.history = []
+# class EscapeRoom:
+#     class ER_Node:
+#         class PathList:
+#             def __init__(self):
+#                 self.paths = [None]*2
+#                 self.numItems = 0
+#                 self.history = []
 
-            def __len__(self):
-                return self.numItems
+#             def __len__(self):
+#                 return self.numItems
 
-            def __extend(paths):
-                newSet = [None] * 2 * len(paths)
-                for item in paths:
-                    EscapeRoom.ER_Node.PathList.__append(item, newSet)
+#             def __extend(paths):
+#                 newSet = [None] * 2 * len(paths)
+#                 for item in paths:
+#                     EscapeRoom.ER_Node.PathList.__append(item, newSet)
 
-                return newSet
+#                 return newSet
 
-            def append(self, path):
-                if EscapeRoom.ER_Node.PathList.__append(path, self.paths):
-                    self.numItems += 1
-                    capacity = self.numItems / len(self.paths)
+#             def append(self, path):
+#                 if EscapeRoom.ER_Node.PathList.__append(path, self.paths):
+#                     self.numItems += 1
+#                     capacity = self.numItems / len(self.paths)
 
-                    if capacity >= 0.75:
-                        self.paths = EscapeRoom.ER_Node.PathList.__extend(self.paths)
+#                     if capacity >= 0.75:
+#                         self.paths = EscapeRoom.ER_Node.PathList.__extend(self.paths)
 
-            def __append(path, paths):
-                for i in range(len(paths)):
-                    if paths[i] == path:
-                        return False
+#             def __append(path, paths):
+#                 for i in range(len(paths)):
+#                     if paths[i] == path:
+#                         return False
 
-                    if paths[i] == None:
-                        paths[i] = path
-                        return True
+#                     if paths[i] == None:
+#                         paths[i] = path
+#                         return True
 
-            def __iter__(self):
-                for item in self.paths:
-                    if item != None:
-                        yield item
+#             def __iter__(self):
+#                 for item in self.paths:
+#                     if item != None:
+#                         yield item
 
-            def __contains__(self, item):
-                return item in self.paths
+#             def __contains__(self, item):
+#                 return item in self.paths
 
-            def addToHis(self, path):
-                self.history.append(path)
+#             def addToHis(self, path):
+#                 self.history.append(path)
 
-        def __init__(self, val, coor):
-            self.val = val
-            self.coor = coor
-            self.paths = EscapeRoom.ER_Node.PathList()
+#         def __init__(self, val, coor):
+#             self.val = val
+#             self.coor = coor
+#             self.paths = EscapeRoom.ER_Node.PathList()
 
-        def getVal(self):
-            return self.val
+#         def getVal(self):
+#             return self.val
 
-        def setVal(self, newval):
-            self.val = newval
+#         def setVal(self, newval):
+#             self.val = newval
 
-        def getCoor(self):
-            return self.coor
+#         def getCoor(self):
+#             return self.coor
 
-        def addPath(self, path):
-            self.paths.append(path)
+#         def addPath(self, path):
+#             self.paths.append(path)
 
-        def __iter__(self):
-            yield (self.val, self.coor)
+#         def __iter__(self):
+#             yield (self.val, self.coor)
 
-            if len(self.paths) != 0:
-                for elem in self.paths:
-                    yield elem
+#             if len(self.paths) != 0:
+#                 for elem in self.paths:
+#                     yield elem
 
-        def __repr__(self):
-            return "ER_Node(" + repr(self.val) + ", " + repr(self.coor) + ")"
+#         def __repr__(self):
+#             return "ER_Node(" + repr(self.val) + ", " + repr(self.coor) + ")"
 
-    def __init__(self, matrix):
-        self.root = matrix[0][0]
+#     def __init__(self, matrix):
+#         self.root = matrix[0][0]
     
-    def insert(self, val, coor):
-        self.root = EscapeRoom.__insert(self.root, val, coor)
+#     def insert(self, val, coor):
+#         self.root = EscapeRoom.__insert(self.root, val, coor)
     
-    def __insert(root, val, coor):
-        if root == None and coor[0]*coor[1] == root.getVal():
-            return EscapeRoom.ER_Node(val, coor)
+#     def __insert(root, val, coor):
+#         if root == None and coor[0]*coor[1] == root.getVal():
+#             return EscapeRoom.ER_Node(val, coor)
         
-        for path in root.paths:
-            self.
+#         for path in root.paths:
+#             self.
 
 
 def factor_coordinates(dividend, num_rows, num_columns):
